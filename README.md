@@ -1,4 +1,4 @@
-# Cascader
+# Cascader [![Build](https://github.com/grookage/cascader/actions/workflows/build.yml/badge.svg)](https://github.com/grookage/cascader/actions/workflows/build.yml)
 
 A small library to act like a proxy in front of any http web server. Particularly helpful when a service need to migrated amongst environments and a quick proxy is needed to front the requests in the interim
 
