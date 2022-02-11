@@ -1,33 +1,18 @@
-# Service Proxy [![Travis build status](https://travis-ci.org/koushikr/dropwizard-serviceproxy.svg?branch=master)](https://travis-ci.org/koushikr/dropwizard-serviceproxy)
+# Cascader
 
-A dropwizard bundle to act like a proxy in front of any http web server.
+A small library to act like a proxy in front of any http web server. Particularly helpful when a service need to migrated amongst environments and a quick proxy is needed to front the requests in the interim
 
 > It is not down on any map; true places never are.
 > - Moby- Dick, Herman Melville
 
-
 ### Maven Dependency
-Use the following repository:
-```xml
-<repository>
-    <id>clojars</id>
-    <name>Clojars repository</name>
-    <url>https://clojars.org/repo</url>
-</repository>
-```
-Use the following maven dependency:
-```xml
-<dependency>
-    <groupId>io.github.serviceproxy</groupId>
-    <artifactId>serviceproxy</artifactId>
-    <version>0.0.1-4</version>
-</dependency>
-```
+
+Work in Progress. Will publish once tests are written. 
 
 ### Build instructions
   - Clone the source:
 
-        git clone github.com/koushikr/dropwizard-serviceproxy
+        git clone github.com/grookage/cascader
 
   - Build
 
@@ -35,7 +20,7 @@ Use the following maven dependency:
 
 ### Tech
 
-* [Dropwizard](https://github.com/dropwizard/dropwizard) - The bundle that got created
+* [Dropwizard](https://github.com/dropwizard/dropwizard) - The bundle that got created for the server. 
 * [OkhttpClient](https://square.github.io/okhttp/4.x/okhttp/okhttp3/-ok-http-client/) - Http client that just works.
 * [Hystrix](https://github.com/Netflix/Hystrix) - For fault tolerance
 
@@ -46,7 +31,7 @@ Use the following maven dependency:
 ```
 static class SampleConfiguration extends Configuration{
 
-        private ProxyConfiguration proxyConfiguration;
+        private CascaderConfiguration cascaderConfiguration;
 
     }
 }
@@ -56,7 +41,7 @@ static class SampleConfiguration extends Configuration{
 ## Bundle Inclusion
 
 ```
-      ProxyBundle<SampleConfiguration> proxyBundle = new ProxyBundle<SampleConfiguration>() {
+      CascaderBundle<SampleConfiguration> cascaderBundle = new CascaderBundle<SampleConfiguration>() {
 
                 @Override
                 public ProxyConfiguration getProxy(SampleConfiguration configuration) {
@@ -64,8 +49,7 @@ static class SampleConfiguration extends Configuration{
                 }
       };
 
-      bootstrap.addBundle(proxyBundle);
-
+      bootstrap.addBundle(cascaderBundle);
 ```
 
 LICENSE
