@@ -41,6 +41,12 @@
         </developer>
     </developers>
 
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/grookage/cascader/issues</url>
+    </issueManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.6</lombok.version>
