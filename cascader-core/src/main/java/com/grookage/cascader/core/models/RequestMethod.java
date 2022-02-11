@@ -15,6 +15,7 @@
  */
 package com.grookage.cascader.core.models;
 
+@SuppressWarnings("UnusedReturnValue")
 public enum RequestMethod {
 
     HEAD{
@@ -64,7 +65,6 @@ public enum RequestMethod {
     }
 
     public abstract <T> T accept(RequestMethod.RequestMethodVisitor<T> visitor);
-
 
     public interface RequestMethodVisitor<T> {
         T visitHead();
